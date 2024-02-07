@@ -142,4 +142,4 @@ Delete from customer where id=1
 ## Relational Tables
 ### Foreign Key
 Basicly primary key is unique for tables but foreign keys connecting tables with other tables.
-![example for foreign key]([https://myoctocat.com/assets/images/base-octocat.svg](https://www.programiz.com/sites/tutorial2program/files/foreign-key.png)https://www.programiz.com/sites/tutorial2program/files/foreign-key.png)
+![example for foreign key](https://www.programiz.com/sites/tutorial2program/files/foreign-key.png)
