@@ -20,9 +20,22 @@
     * [X] Group by
     * [X] Having
     * [X] SubQuery
-    * [X] Inner Join
   * [X] Update
   * [X] Delete
+- [X] Relational Table
+  * [X] Foreign Key
+  * [X] Joins
+  	* [X] Inner Join
+  	* [X] Left Join
+  	* [X] Right Join
+  	* [X] Full Join
+  	* [X] Cross Join
+  * [X] Intersect and Except
+  	* [X] Intersect
+  	* [X] Except
+  * [X] Union and Union All 
+  	* [X] Union
+  	* [X] Union All
 
 
 ## Table Create / Drop
@@ -124,10 +137,6 @@ select name, count(*) as amount from customer group by name having count(*)>2
 ```
 select * from customer where money=(select max(money) from customer)
 ```
-* Inner Join
-```
-select customer.name,job.name from customer inner join job on customer.job=job.id
-```
 
 **Update**
 ```
@@ -143,3 +152,43 @@ Delete from customer where id=1
 ### Foreign Key
 Basicly primary key is unique for tables but foreign keys connecting tables with other tables.
 ![example for foreign key](https://www.programiz.com/sites/tutorial2program/files/foreign-key.png)
+
+### Joins
+* Inner Join
+```
+select customer.name,job.name from customer inner join job on customer.job=job.id
+```
+* Left Join
+```
+select customer.id,customer.name,job.name from customer left join job on job=job.id
+```
+* Right Join
+```
+select customer.id,customer.name,job.name from customer right join job on job=job.id
+```
+* Full Join
+```
+select customer.id,customer.name,job.name from customer full join job on job=job.id order by customer.id ASC
+```
+* Cross Join
+```
+select * from customer cross join job
+```
+### Intersect and Except
+* Intersect
+```
+select id from customer intersect select id from job order by id ASC
+```
+* Except
+```
+select id from customer except select id from job order by id ASC
+```
+### Union and Union All
+* Union
+```
+select id from customer union select id from job order by id ASC
+```
+* Union all
+```
+select id from customer union all select id from job order by id ASC
+```
