@@ -36,6 +36,14 @@
   * [X] Union and Union All 
   	* [X] Union
   	* [X] Union All
+  * [ ] String Functions 
+  	* [ ] ASCII
+  	* [ ] Concat
+        * [ ] Left & Right
+        * [ ] Lenght
+        * [ ] Replace
+        * [ ] Reverse
+        * [ ] SubString
 
 
 ## Table Create / Drop
