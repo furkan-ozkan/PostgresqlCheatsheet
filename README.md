@@ -1,5 +1,6 @@
 # Postgresql Cheatsheet
 ## Introduction
+- [X] Basics
 - [X] Table Create / Drop
   * [X] Create Table
   * [X] Drop Table
@@ -59,6 +60,26 @@
   	* [X] Current Date
   	* [X] Current Time
   	* [X] Now
+  	* [X] Age
+- [X] View
+	* [X] Create View
+ 	* [X] Read View
+  	* [X] Update / Altar View
+  	* [X] Delete / Drop View
+- [X] Variables
+	* [X] Create Variable
+ 	* [X] Print Variable
+  	* [X] Aritmetical Operation with Variable
+ 	
+## Basics
+All of this basic tests done on this tables.<br />
+ - customer table columns : id,name,money,job<br />
+ - job table columns : id,name<br />
+> [!NOTE]
+> Both table has name and id colums. Its because of create a name conflict.
+
+![customer table](https://raw.githubusercontent.com/furkan-ozkan/PostgresqlCheatsheet/main/customertable.png)
+![job table](https://raw.githubusercontent.com/furkan-ozkan/PostgresqlCheatsheet/main/jobtable.png)
 
 ## Table Create / Drop
 **Create Table** <br /><br />
@@ -301,3 +322,61 @@ select Current_Time(0)
 ```
 select now()
 ```
+* Age
+```
+select age(timestamp '05.03.1998')
+```
+
+## View
+* Create View
+  ```
+  create view CustomerWithJobs
+  as
+  select customer.name,customer.money,job.name as jobname from customer inner join job on customer.job=job.id
+  ```
+* Read View
+  ```
+  select * from CustomerWithJobs
+  ```
+* Update / Altar View
+  ```
+  Altar view CustomerWithJobs
+  as
+  select customer.id,customer.name,customer.money,job.name as jobname from customer inner join job on customer.job=job.id
+  ```
+* Delete / Drop View
+  ```
+  Drop view CustomerWithJobs
+  ```
+
+  ## Variables
+* Create Variable
+  ```
+  do $$
+  declare
+  x int:=10;
+  begin
+  end $$;
+  ```
+* Print Variable
+  ```
+  do $$
+  declare
+  x int:=10;
+  begin
+  raise notice 'Value of X = %',x;
+  end $$;
+  ```
+
+* Aritmetical Operation with Variable
+  ```
+  do $$
+  declare
+  x int:=10;
+  y int:=2;
+  sum int;
+  begin
+  sum:=x+y;
+  raise notice 'Value of Sum = %',sum;
+  end $$;
+  ```
