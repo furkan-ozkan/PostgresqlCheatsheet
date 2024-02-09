@@ -36,15 +36,29 @@
   * [X] Union and Union All 
   	* [X] Union
   	* [X] Union All
-  * [ ] String Functions 
-  	* [ ] ASCII
-  	* [ ] Concat
-        * [ ] Left & Right
-        * [ ] Lenght
-        * [ ] Replace
-        * [ ] Reverse
-        * [ ] SubString
-
+- [X] String Functions 
+  	* [X] ASCII
+  	* [X] Concat
+   	* [X] Left / Right
+    * [X] Lenght
+     * [x] Replace
+	* [X] Reverse
+      * [X] Substring
+- [X] Math. Functions 
+  	* [X] Abs
+  	* [X] Ceil
+  	* [X] Floor
+  	* [X] Pi
+  	* [X] Random
+  	* [X] Round
+  	* [X] Power
+  	* [X] Log
+  	* [X] Sign
+  	* [X] Sqrt
+- [X] Time Functions 
+  	* [X] Current Date
+  	* [X] Current Time
+  	* [X] Now
 
 ## Table Create / Drop
 **Create Table** <br /><br />
@@ -199,4 +213,91 @@ select id from customer union select id from job order by id ASC
 * Union all
 ```
 select id from customer union all select id from job order by id ASC
+```
+## String Functions
+* ASCII
+```
+select ASCII ('A')
+```
+* Concat
+```
+select CONCAT(id,'_',name) from customer
+```
+* Left & Right
+```
+select left(name,2) from customer
+select right(name,2) from customer
+```
+* Lenght
+```
+select lenght(name) from customer
+```
+* Replace
+```
+select replace(name,'i','k') from customer
+```
+* Reverse
+```
+select reverse(name) from customer
+```
+* Substring
+```
+select substring(name,2,2) from customer
+```
+## Math. Functions
+* Abs
+```
+select abs(-5)
+```
+* Ceil
+```
+select ceiling(4.85)
+```
+* Floor
+```
+select floor(4.85)
+```
+* Pi
+```
+select pi()
+```
+* Random
+```
+select random()
+```
+* Round
+```
+select Round(18.1234,2)
+```
+* Power
+```
+select power(2,4)
+```
+* Log
+```
+select log(3,2)
+```
+* Sign
+```
+select sign(25)
+select sign(-25)
+select sign(0)
+```
+* Sqrt
+```
+select sqrt(625)
+```
+
+## Time Functions
+* Current Date
+```
+select Current_Date
+```
+* Current Time
+```
+select Current_Time(0)
+```
+* Now
+```
+select now()
 ```
